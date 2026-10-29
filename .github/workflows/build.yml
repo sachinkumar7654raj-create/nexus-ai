@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Get source code
         uses: actions/checkout@v4
@@ -19,19 +20,21 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Extract project
+        run: unzip -o NEXUS_AI_Project.zip -d nexus-project
+
       - name: Build APK
-        run: |
-          if [ ! -f gradlew ]; then
-            echo "Android project files are missing."
-            exit 1
-          fi
-          chmod +x gradlew
-          ./gradlew assembleDebug
+        working-directory: nexus-project
+        run: gradle assembleDebug
 
       - name: Upload APK
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: NEXUS-AI-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
-          
+          path: nexus-project/app/build/outputs/apk/debug/app-debug.apk
+
