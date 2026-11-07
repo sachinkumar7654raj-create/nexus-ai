@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personality Modes"
+            android:textColor="@color/nx_cyan"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Tap a mode to activate it. You can also say: “teacher mode on karo”."
+            android:textColor="@color/nx_text_dim"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/modeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Create your own mode"
+            android:textColor="@color/nx_cyan"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/customName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_glass"
+            android:hint="Mode name"
+            android:inputType="textCapWords"
+            android:padding="12dp"
+            android:textColor="@color/nx_text"
+            android:textColorHint="@color/nx_text_dim" />
+
+        <EditText
+            android:id="@+id/customPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_glass"
+            android:gravity="top"
+            android:hint="Personality and instructions (e.g. “You are a witty fitness coach who speaks Hinglish…”)"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="4"
+            android:padding="12dp"
+            android:textColor="@color/nx_text"
+            android:textColorHint="@color/nx_text_dim" />
+
+        <Button
+            android:id="@+id/saveCustom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Save and activate custom mode" />
+    </LinearLayout>
+</ScrollView>

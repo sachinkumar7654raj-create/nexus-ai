@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Nexus" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/nx_cyan</item>
+        <item name="colorOnPrimary">@color/nx_black</item>
+        <item name="colorSecondary">@color/nx_blue</item>
+        <item name="colorSurface">@color/nx_navy</item>
+        <item name="colorOnSurface">@color/nx_text</item>
+        <item name="android:windowBackground">@color/nx_black</item>
+        <item name="android:statusBarColor">@color/nx_black</item>
+        <item name="android:navigationBarColor">@color/nx_navy</item>
+    </style>
+
+    <!-- Android 12 system splash (androidx core-splashscreen handles older versions) -->
+    <style name="Theme.Nexus.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/nx_black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.Nexus</item>
+    </style>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Website Studio"
+        android:textColor="@color/nx_cyan"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_glass"
+        android:gravity="top"
+        android:hint="Kaisi website chahiye? (e.g. professional shopping website, dark theme)"
+        android:inputType="textMultiLine|textCapSentences"
+        android:maxLines="5"
+        android:minLines="2"
+        android:padding="12dp"
+        android:textColor="@color/nx_text"
+        android:textColorHint="@color/nx_text_dim" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Generate / Update website" />
+
+    <TextView
+        android:id="@+id/studioStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/nx_text_dim"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/tabPreview" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Preview" />
+        <Button android:id="@+id/tabCode" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Code" />
+        <Button android:id="@+id/btnSave" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Save" />
+        <Button android:id="@+id/btnShare" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Share" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ScrollView
+            android:id="@+id/codeScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0A1226"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/codeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:padding="10dp"
+                android:textColor="@color/nx_text"
+                android:textIsSelectable="true"
+                android:textSize="12sp" />
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

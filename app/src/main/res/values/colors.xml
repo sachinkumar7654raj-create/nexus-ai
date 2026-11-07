@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nx_black">#05070D</color>
+    <color name="nx_navy">#0A1226</color>
+    <color name="nx_navy_light">#12204A</color>
+    <color name="nx_blue">#2D7DFF</color>
+    <color name="nx_cyan">#22E4FF</color>
+    <color name="nx_text">#E6F1FF</color>
+    <color name="nx_text_dim">#8FA6C9</color>
+    <color name="nx_glass">#1A2A5A80</color>
+    <color name="nx_glass_stroke">#4422E4FF</color>
+    <color name="nx_user_bubble">#2D7DFF</color>
+    <color name="nx_ai_bubble">#14224A</color>
+</resources>

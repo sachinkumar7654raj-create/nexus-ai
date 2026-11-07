@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Settings" android:textColor="@color/nx_text" android:textSize="22sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Profile"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <EditText android:id="@+id/userName" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:background="@drawable/bg_glass" android:hint="Your name (used in replies)"
+            android:padding="12dp" android:textColor="@color/nx_text" android:textColorHint="@color/nx_text_dim"
+            android:singleLine="true" android:inputType="textPersonName" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="AI Provider &amp; Keys"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Which AI should answer?"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Spinner android:id="@+id/providerSpinner" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="4dp" android:background="@drawable/bg_glass" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Gemini API key (free at aistudio.google.com) - stored encrypted"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <EditText android:id="@+id/geminiKey" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:background="@drawable/bg_glass" android:hint="Paste Gemini API key"
+            android:padding="12dp" android:textColor="@color/nx_text" android:textColorHint="@color/nx_text_dim"
+            android:singleLine="true" android:inputType="textPassword" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Grok API key (console.x.ai) - stored encrypted"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <EditText android:id="@+id/grokKey" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:background="@drawable/bg_glass" android:hint="Paste Grok API key"
+            android:padding="12dp" android:textColor="@color/nx_text" android:textColorHint="@color/nx_text_dim"
+            android:singleLine="true" android:inputType="textPassword" />
+        <Button android:id="@+id/fetchModels" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Fetch available models (live from your key)" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Models your key can use:"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Spinner android:id="@+id/modelSpinner" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="4dp" android:background="@drawable/bg_glass" />
+        <EditText android:id="@+id/modelName" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:background="@drawable/bg_glass" android:hint="Model name (auto-filled; leave empty for automatic)"
+            android:padding="12dp" android:textColor="@color/nx_text" android:textColorHint="@color/nx_text_dim"
+            android:singleLine="true" android:inputType="textNoSuggestions" />
+        <Button android:id="@+id/saveAi" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Save AI settings" />
+        <Button android:id="@+id/testAi" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Test connection" />
+        <TextView android:id="@+id/aiStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text=""
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Voice"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/speakSwitch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Speak replies aloud" android:textColor="@color/nx_text" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/continuousSwitch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Continuous conversation (listen again after each reply)" android:textColor="@color/nx_text" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="I speak (speech recognition language)"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Spinner android:id="@+id/sttLang" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="4dp" android:background="@drawable/bg_glass" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="English voice accent"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Spinner android:id="@+id/latinLang" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="4dp" android:background="@drawable/bg_glass" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Voice (pick one and press Test; Hindi voices are used for Devanagari replies)"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Spinner android:id="@+id/voiceSpinner" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="4dp" android:background="@drawable/bg_glass" />
+        <Button android:id="@+id/refreshVoices" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Refresh voice list" />
+        <Button android:id="@+id/testVoice" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Test selected voice" />
+        <TextView android:id="@+id/rateLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Speed"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <SeekBar android:id="@+id/rateSeek" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="30" />
+        <TextView android:id="@+id/pitchLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Pitch"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <SeekBar android:id="@+id/pitchSeek" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="20" />
+        <TextView android:id="@+id/volLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Volume"
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <SeekBar android:id="@+id/volSeek" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="100" />
+        <Button android:id="@+id/openTtsSettings" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Install more voices (system Text-to-speech settings)" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Wake word (experimental)"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/wakeSwitch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Always listen for “Hey Nexus”" android:textColor="@color/nx_text" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Uses battery and shows a notification while on. Android or Infinix battery manager may stop it - allow 'No restrictions' for NEXUS in the permission list below."
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Memory"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/memorySwitch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Remember things I ask it to remember (view/delete in Tools)" android:textColor="@color/nx_text" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Permissions"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Each permission is only used for the feature named next to it."
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <LinearLayout android:id="@+id/permBox" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Data &amp; Privacy"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="Chat history, notes, reminders and memory are stored only inside this app. Your messages are sent to the AI provider you choose (Google Gemini or xAI Grok) to get replies. NEXUS never records audio in the background (except the optional wake word you turn on) and sends messages/calls only after you confirm."
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <Button android:id="@+id/clearHistory" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Clear conversation history" />
+        <Button android:id="@+id/clearInbox" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Clear message inbox (this session)" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="About"
+            android:textColor="@color/nx_cyan" android:textSize="16sp" android:textStyle="bold" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:text="NEXUS AI v0.2.0 - see BUILD_INSTRUCTIONS.md for the feature status list."
+            android:textColor="@color/nx_text_dim" android:textSize="13sp" />
+        <View android:layout_width="match_parent" android:layout_height="24dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NEXUS AI</string>
+    <string name="tagline">Your Personal AI. Your Digital World.</string>
+    <string name="nav_home">Voice</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_modes">Modes</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_settings">Settings</string>
+    <string name="accessibility_description">Lets NEXUS AI read the screen, press Back/Home, tap buttons and scroll ONLY when you ask it to by voice or text. It never records in the background and skips password fields.</string>
+</resources>
